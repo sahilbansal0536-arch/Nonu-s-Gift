@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hey Nonu... ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-1-bg">
+  <canvas id="fx-canvas"></canvas>
+
+  <div class="music-player-container" id="music-player">
+    <div class="music-icon" id="music-disc">🎵</div>
+    <div class="music-meta">
+      <span class="music-title" id="music-label">Tap for sound</span>
+      <span class="music-page-tag">Page 1 of 6</span>
+    </div>
+  </div>
+
+  <main class="page-wrapper">
+    <div class="glass-card">
+      <h1 class="script-title">Hey nonu... ❤️</h1>
+      
+      <div class="p1-content">
+        <p class="body-text" id="line1" style="font-size: 1.25rem; font-weight: 500; color: #fff; margin-bottom: 0.6rem;">
+          I made a little something for you...
+        </p>
+        <p class="body-text" id="line2" style="color: var(--lavender);">
+          Because some feelings deserve more than just a text.
+        </p>
+      </div>
+
+      <button class="btn-romantic" id="open-btn" style="margin-top: 2rem;">
+        <span>Open it ❤️</span>
+      </button>
+
+      <div class="watermark">Made with love by Sahil</div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initCanvasFX('petals');
+      const audio = new AutoAudioEngine(CONFIG.songs.page1);
+
+      setTimeout(() => document.getElementById('line1').classList.add('show'), 800);
+      setTimeout(() => document.getElementById('line2').classList.add('show'), 1900);
+
+      document.getElementById('open-btn').addEventListener('click', () => {
+        navigateToPage('page2.html');
+      });
+    });
+  </script>
+</body>
+</html>

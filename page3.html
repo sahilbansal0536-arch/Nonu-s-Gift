@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Things I Don't Always Say 💌</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-2-bg">
+  <canvas id="fx-canvas"></canvas>
+
+  <div class="music-player-container" id="music-player">
+    <div class="music-icon" id="music-disc">🎵</div>
+    <div class="music-meta">
+      <span class="music-title" id="music-label">Letter Melodies</span>
+      <span class="music-page-tag">Page 3 of 6</span>
+    </div>
+  </div>
+
+  <main class="page-wrapper">
+    <div class="glass-card">
+      <h2 class="serif-title">Things I Don't Always Say 💌</h2>
+      <p class="subtitle" style="margin-bottom: 1rem;">Tap the envelope to open my letter</p>
+
+      <div class="envelope-container" id="envelope-trigger">
+        <div class="envelope" id="envelope">
+          <div class="envelope-flap"></div>
+          <div class="envelope-front"></div>
+          <div class="letter-sheet">
+            <span style="font-family: var(--font-script); color: #7b1e48; font-size: 1.3rem;">Tap to unfold...</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="letter-full-modal" id="letter-modal">
+        <div class="letter-salutation">Nonu,</div>
+        <div id="paragraphs-container"></div>
+        <div class="letter-footer-quote">"Some things are easier to feel than explain."</div>
+      </div>
+
+      <button class="btn-romantic" data-target-url="page4.html" id="next-btn" style="display: none; margin-top: 1.8rem;">
+        <span>There's more... →</span>
+      </button>
+
+      <div class="watermark">Sahil & Nonu</div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initCanvasFX('petals');
+      new AutoAudioEngine(CONFIG.songs.page3);
+
+      const envelope = document.getElementById('envelope');
+      const modal = document.getElementById('letter-modal');
+      const pContainer = document.getElementById('paragraphs-container');
+      const nextBtn = document.getElementById('next-btn');
+
+      CONFIG.letterParagraphs.slice(1).forEach((text) => {
+        const p = document.createElement('p');
+        p.className = 'letter-paragraph';
+        p.textContent = text;
+        pContainer.appendChild(p);
+      });
+
+      envelope.parentElement.addEventListener('click', () => {
+        envelope.classList.add('open');
+        setTimeout(() => {
+          modal.classList.add('active');
+          envelope.parentElement.style.display = 'none';
+
+          const paras = document.querySelectorAll('.letter-paragraph');
+          paras.forEach((p, idx) => {
+            setTimeout(() => {
+              p.classList.add('revealed');
+              if (idx === paras.length - 1) {
+                nextBtn.style.display = 'inline-flex';
+              }
+            }, (idx + 1) * 350);
+          });
+        }, 750);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Few Things I Love About You 🥹</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-3-bg">
+  <canvas id="fx-canvas"></canvas>
+
+  <div class="music-player-container" id="music-player">
+    <div class="music-icon" id="music-disc">🎵</div>
+    <div class="music-meta">
+      <span class="music-title" id="music-label">Playful Melodies</span>
+      <span class="music-page-tag">Page 4 of 6</span>
+    </div>
+  </div>
+
+  <main class="page-wrapper">
+    <div class="glass-card" style="max-width: 680px;">
+      <h2 class="serif-title">Okay... don't get too proud 😭❤️</h2>
+      <p class="subtitle">Just a few things I love about you.</p>
+
+      <div class="cards-grid">
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">🌸</span>
+            <span class="card-title">Your smile</span>
+          </div>
+          <div class="card-detail">Somehow it can fix my mood in seconds.</div>
+        </div>
+
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">🤍</span>
+            <span class="card-title">Your heart</span>
+          </div>
+          <div class="card-detail">I love how pure your heart is. You care deeply, love genuinely, and never make it feel complicated.</div>
+        </div>
+
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">🤍</span>
+            <span class="card-title">Your Faith</span>
+          </div>
+          <div class="card-detail">You taught me to find peace in Mahadev, but somehow, when I think of peace, I still find you in it.</div>
+        </div>
+
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">🐱</span>
+            <span class="card-title">Your Height</span>
+          </div>
+          <div class="card-detail">I love how you’re small enough to fit perfectly in my arms...</div>
+        </div>
+
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">🧸</span>
+            <span class="card-title">Your Cuteness</span>
+          </div>
+          <div class="card-detail">I love how naturally cute you are, without even trying..</div>
+        </div>
+
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">✨</span>
+            <span class="card-title">Your strength</span>
+          </div>
+          <div class="card-detail">You keep going even when things aren't easy.</div>
+        </div>
+
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">🫶</span>
+            <span class="card-title">Our conversations</span>
+          </div>
+          <div class="card-detail">Even the completely useless ones somehow become my favourite.</div>
+        </div>
+
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">❤️</span>
+            <span class="card-title">You</span>
+          </div>
+          <div class="card-detail">Just you. Somehow, that's more than enough.</div>
+        </div>
+      </div>
+
+      <p class="body-text" style="color: var(--lavender); font-size: 1rem; margin-top: 1rem;">
+        Every little moment with you becomes a memory I want to keep.
+      </p>
+
+      <button class="btn-romantic" data-target-url="page5.html">
+        <span>Keep reading... ✨</span>
+      </button>
+
+      <div class="watermark">Sahil & Nonu</div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initCanvasFX('petals');
+      new AutoAudioEngine(CONFIG.songs.page4);
+
+      document.querySelectorAll('.love-card').forEach((card) => {
+        card.addEventListener('click', () => {
+          card.classList.toggle('expanded');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

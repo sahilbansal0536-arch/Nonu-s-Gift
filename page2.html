@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Flower For You My Cutieepie 🌸</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="flower-page-bg">
+  <canvas id="fx-canvas"></canvas>
+
+  <div class="music-player-container" id="music-player">
+    <div class="music-icon" id="music-disc">🎵</div>
+    <div class="music-meta">
+      <span class="music-title" id="music-label">Blooming Melodies</span>
+      <span class="music-page-tag">Page 2 of 6</span>
+    </div>
+  </div>
+
+  <main class="page-wrapper flower-page-wrapper">
+    <div class="flower-header-card">
+      <h2 class="script-title" style="font-size: 2.8rem; margin-bottom: 0.3rem;">For my Cutieepie, Chotu ,Ghanti🔔  🌸</h2>
+      <p class="subtitle" style="margin-bottom: 0;">Watch it bloom just for you...</p>
+    </div>
+
+    <div class="flower-viewport">
+      <svg class="bloom-svg" viewBox="0 0 400 650" preserveAspectRatio="xMidYMax meet">
+        <defs>
+          <linearGradient id="stemGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#1b4d24" />
+            <stop offset="100%" stop-color="#4ade80" />
+          </linearGradient>
+          <radialGradient id="petalGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ff758c" />
+            <stop offset="70%" stop-color="#ff4b72" />
+            <stop offset="100%" stop-color="#b81b4c" />
+          </radialGradient>
+          <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fff6a2" />
+            <stop offset="100%" stop-color="#f6d365" />
+          </radialGradient>
+          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+
+        <path class="grow-stem" d="M 200 650 Q 210 460 195 310 T 200 170" fill="none" stroke="url(#stemGrad)" stroke-width="7" stroke-linecap="round" />
+        
+        <g class="bloom-leaf left-leaf">
+          <path d="M 198 440 C 130 430 110 370 110 370 C 140 400 185 410 198 440 Z" fill="#2e7d32" stroke="#4ade80" stroke-width="1.5" />
+        </g>
+        <g class="bloom-leaf right-leaf">
+          <path d="M 197 340 C 270 330 290 270 290 270 C 260 300 215 310 197 340 Z" fill="#2e7d32" stroke="#4ade80" stroke-width="1.5" />
+        </g>
+
+        <g class="bloom-head" filter="url(#glow)">
+          <path class="petal" d="M 200 170 C 140 120 120 40 200 20 C 280 40 260 120 200 170 Z" fill="url(#petalGrad)" />
+          <path class="petal" d="M 200 170 C 110 150 90 70 160 30 C 230 40 210 130 200 170 Z" fill="url(#petalGrad)" />
+          <path class="petal" d="M 200 170 C 290 150 310 70 240 30 C 170 40 190 130 200 170 Z" fill="url(#petalGrad)" />
+          <path class="petal" d="M 200 170 C 130 170 120 80 180 50 C 240 60 220 140 200 170 Z" fill="url(#petalGrad)" />
+          <path class="petal" d="M 200 170 C 270 170 280 80 220 50 C 160 60 180 140 200 170 Z" fill="url(#petalGrad)" />
+          <circle cx="200" cy="115" r="22" fill="url(#coreGlow)" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="flower-footer-card">
+      <p class="body-text" style="font-size: 1.05rem; color: #fff; margin-bottom: 0.8rem;">
+        Just like this flower, you bring color and light into my life every single day. 🌸
+      </p>
+      <button class="btn-romantic" data-target-url="page3.html" id="flower-next-btn">
+        <span>Read my letter 💌</span>
+      </button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initCanvasFX('petals');
+      new AutoAudioEngine(CONFIG.songs.page2);
+
+      setTimeout(() => {
+        const btn = document.getElementById('flower-next-btn');
+        if (btn) btn.classList.add('ready');
+      }, 3400);
+    });
+  </script>
+</body>
+</html>

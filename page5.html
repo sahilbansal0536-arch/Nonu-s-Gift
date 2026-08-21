@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How You Make Me Feel Loved 🤍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-loved-bg">
+  <canvas id="fx-canvas"></canvas>
+
+  <div class="music-player-container" id="music-player">
+    <div class="music-icon" id="music-disc">🎵</div>
+    <div class="music-meta">
+      <span class="music-title" id="music-label">Comfort & Warmth</span>
+      <span class="music-page-tag">Page 5 of 6</span>
+    </div>
+  </div>
+
+  <main class="page-wrapper">
+    <div class="glass-card" style="max-width: 680px;">
+      <h2 class="serif-title">Moments I Forgot the World” ❤️</h2>
+      <p class="subtitle">It's in the quiet, everyday things you do...</p>
+
+      <!-- OPTIONAL POLAROID MEMORIES PLACEHOLDER -->
+      <!-- 
+      <div class="memories-grid">
+        <div class="polaroid-card">
+          <img src="assets/images/memory1.jpg" alt="Memory 1" class="polaroid-img">
+          <p class="polaroid-caption">My favorite smile ✨</p>
+        </div>
+        <div class="polaroid-card">
+          <img src="assets/images/memory2.jpg" alt="Memory 2" class="polaroid-img">
+          <p class="polaroid-caption">Us ❤️</p>
+        </div>
+      </div>
+      -->
+
+      <div class="cards-grid">
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">☕</span>
+            <span class="card-title">My Favorite Part of Every Morning” 🌅❤️</span>
+          </div>
+          <div class="card-detail">The first time you held my hand, I swear I was completely zoned out. For a moment, I forgot everything around me. I just remember how soft your hands felt and how strangely peaceful that little moment was. It was such a simple thing, but somehow it became one of those moments I could never forget. ❤️</div>
+        </div>
+
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">🫂</span>
+            <span class="card-title">The First Time I Held Your Hand</span>
+          </div>
+          <div class="card-detail">The first time you held my hand, I swear I was completely zoned out. For a moment, I forgot everything around me. I just remember how soft your hands felt and how strangely peaceful that little moment was. It was such a simple thing, but somehow it became one of those moments I could never forget. ❤️</div>
+        </div>
+
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">🥹</span>
+            <span class="card-title">When You Call Me Babu Buggu</span>
+          </div>
+          <div class="card-detail">I don't know what kind of magic there is in the way you call me “Babu Buggu,” but it instantly makes me feel so good and ridiculously cute. 🥹❤️ It’s such a small thing, but hearing it from you makes me smile like an idiot. Maybe it's just a name to you, but to me, it feels like one of those little pieces of love that I never want to lose.</div>
+        </div>
+
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">🌟</span>
+            <span class="card-title">Your Smile Feels Like Heaven” ☁️❤️</span>
+          </div>
+          <div class="card-detail">Whenever you pass by with that smile on your face, everything around me just feels a little more beautiful. For those few seconds, it honestly feels like heaven—like the whole world slows down just so I can see you smile. You probably don't even realize what your smile does to me, but it has the power to turn an ordinary moment into my favorite one. ❤️</div>
+        </div>
+
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">👀</span>
+            <span class="card-title">The Look That Says Everything.</span>
+          </div>
+          <div class="card-detail">There’s something about making eye contact with you that I can never really explain. For a few seconds, everything else just disappears, and it feels like it’s only you and me in that moment. I don't know what you see when you look at me, but I know what happens to me—I forget what I was about to say, what I was doing, and sometimes even how to act normally. ❤️</div>
+        </div>
+
+        <div class="love-card" tabindex="0">
+          <div class="card-header-bar">
+            <span class="card-icon">😂</span>
+            <span class="card-title">Laughing with me</span>
+          </div>
+          <div class="card-detail">The way we can laugh at the dumbest jokes until our stomachs hurt.</div>
+        </div>
+      </div>
+
+      <p class="body-text" style="color: var(--lavender); font-size: 1rem; margin-top: 1rem;">
+        With you, love isn't complicated—it's just home.
+      </p>
+
+      <button class="btn-romantic" data-target-url="page6.html">
+        <span>One last thing... ❤️</span>
+      </button>
+
+      <div class="watermark">Sahil & Nonu</div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initCanvasFX('petals');
+      new AutoAudioEngine(CONFIG.songs.page5);
+
+      document.querySelectorAll('.love-card').forEach((card) => {
+        card.addEventListener('click', () => {
+          card.classList.toggle('expanded');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
